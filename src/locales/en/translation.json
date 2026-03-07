@@ -6,8 +6,8 @@
     "contact": "Contact"
   },
   "home": {
-    "welcome": "Hi, I’m Daniel Elorreaga Mokay.",
-    "description": "Full-stack developer specialized in",
+    "welcome": "Hi, I’m Daniel Elorreaga Mokay",
+    "description": "Full-stack developer",
     "webLabel": "Web",
     "mobileLabel": "Mobile",
     "summary": "I build internal software, landing pages, mobile apps, and data-heavy operational tools for real business workflows.",
@@ -24,61 +24,64 @@
   },
   "about": {
     "eyebrow": "Stack",
-    "title": "Tech stack with structure, not sticker collection.",
-    "intro": "I work across web and mobile. The tools below are the ones I reach for when the job needs clear UX, reliable data handling, and practical delivery.",
+    "title": "Stack built for real business systems.",
+    "intro": "APIs, data models, integrations, realtime flows, operational logic and web or mobile layer needed to ship the product.",
     "principles": {
-      "frontend": {
-        "title": "Frontend first, but not frontend only",
-        "body": "I care about UI feel, but I am comfortable owning the API, data flow, and deployment path behind it."
+      "backend": {
+        "title": "Backend first",
+        "body": "I am strongest in APIs, business logic, data modeling, integrations, and the deployment path around them."
       },
       "business": {
-        "title": "Built for real workflows",
-        "body": "My strongest work lives in dashboards, reporting flows, internal tools, and collaborative admin systems."
+        "title": "Built for operational complexity",
+        "body": "Most of my work supports payroll, finance, inventory, ticketing, reporting, and internal collaboration."
       },
       "tools": {
-        "title": "Proven tools over hype",
-        "body": "React, Node, SQL and NoSQL storage, and practical hosting cover most of what I need."
+        "title": "Practical stack, end-to-end ownership",
+        "body": "Node, SQL and NoSQL storage, realtime services, mobile and frontend layers to deliver a usable product."
       }
     },
     "groups": {
-      "frontend": {
-        "title": "Frontend foundations",
-        "description": "The UI layer I use to build responsive, multilingual, data-heavy interfaces."
+      "backend": {
+        "title": "Backend core",
+        "description": "The services, data stores, integrations, and realtime layers I rely on most."
+      },
+      "delivery": {
+        "title": "Delivery and operations",
+        "description": "Version control, containers, tooling, and hosting that keep projects stable and shippable."
       },
       "mobile": {
         "title": "Mobile development",
         "description": "Tools I use for scanner-based apps, native work, and mobile companions for internal platforms."
       },
-      "backend": {
-        "title": "Backend and data",
-        "description": "Services, realtime flows, and storage options I rely on for operational products."
-      },
-      "delivery": {
-        "title": "Delivery and workflow",
-        "description": "Version control, containers, and hosting platforms I use to ship and iterate."
+      "frontend": {
+        "title": "Frontend support",
+        "description": "UI Tools I use to deliver dashboards, admin flows, or client-facing screens when the product needs them."
       }
     }
   },
   "projects": {
-    "eyebrow": "Projects",
-    "title": "Projects I have worked on.",
-    "intro": "Each project is shown as a compact card with a brief description. The carousel structure is already in place so I can plug your screenshots in when you send them.",
-    "privateNote": "All repositories are private, so this section focuses on the work itself instead of linking code."
+    "eyebrow": "Projects"
   },
   "contact": {
     "eyebrow": "Contact",
-    "title": "Private work, demos, and walkthroughs available on request.",
-    "description": "Most of my work lives inside private company products, so this portfolio is centered on the workflows, systems, and mobile/web solutions I built.",
-    "note": "When you send screenshots, I can swap every placeholder slide for real project images.",
+    "title": "Full-stack development.",
+    "description": "Software for real business operations, internal tools, dashboards, inventory flows, mobile apps, and full-stack systems.",
+    "note": "Based in Culiacan, Sinaloa, Mexico.",
     "fit": [
       "Internal tools",
       "Admin dashboards",
       "Mobile apps",
-      "Realtime workflows"
+      "Realtime operational systems"
     ],
-    "privateTitle": "What this section is ready for",
-    "privateBody": "Private project demos, screenshots, and deeper walkthroughs can be added without changing the structure again.",
-    "primaryCta": "Back to top",
-    "secondaryCta": "See stack"
+    "privateTitle": "Best fit",
+    "privateBody": "Private company products, reporting flows, inventory operations, realtime features, and end-to-end delivery from backend logic to usable interfaces.",
+    "cards": {
+      "email": "Email",
+      "phone": "Phone",
+      "linkedin": "LinkedIn",
+      "location": "Location"
+    },
+    "primaryCta": "Send email",
+    "secondaryCta": "Open LinkedIn"
   }
 }

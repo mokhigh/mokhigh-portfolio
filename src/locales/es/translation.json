@@ -6,16 +6,16 @@
     "contact": "Contacto"
   },
   "home": {
-    "welcome": "Hola, soy Daniel Elorreaga Mokay.",
-    "description": "Desarrollador full-stack especializado en",
+    "welcome": "Hola, soy Daniel Elorreaga Mokay",
+    "description": "Desarrollador full-stack",
     "webLabel": "Web",
     "mobileLabel": "Mobile",
-    "summary": "Construyo software interno, landing pages, apps moviles y herramientas operativas con mucho dato para flujos reales de negocio.",
+    "summary": "Construyo software de uso interno, landing pages, apps móviles y herramientas operativas para flujos reales de negocio.",
     "highlightTags": [
       "Herramientas internas",
       "Sistemas en tiempo real",
       "Reportes y auditorias",
-      "Apps moviles"
+      "Apps móviles"
     ],
     "primaryCta": "Ver proyectos",
     "secondaryCta": "Ver stack",
@@ -24,61 +24,64 @@
   },
   "about": {
     "eyebrow": "Stack",
-    "title": "Stack tecnologico con estructura, no una coleccion de stickers.",
-    "intro": "Trabajo tanto en web como en mobile. Las herramientas de abajo son las que uso cuando el trabajo necesita UX clara, manejo confiable de datos y entrega practica.",
+    "title": "Stack orientado para sistemas reales de negocio.",
+    "intro": "APIs, modelado de datos, integraciones, flujos en tiempo real, logica operativa y diseño web o móvil necesarios para entregar el producto.",
     "principles": {
-      "frontend": {
-        "title": "Primero frontend, pero no solo frontend",
-        "body": "Me importa mucho la sensacion del UI, pero tambien puedo hacerme cargo del API, el flujo de datos y el camino de despliegue."
+      "backend": {
+        "title": "Backend first",
+        "body": "Fortaleza en APIs, logica de negocio, modelado de datos, integraciones y el despliegue de éstos."
       },
       "business": {
-        "title": "Pensado para flujos reales",
-        "body": "Mi mejor trabajo vive en dashboards, reportes, herramientas internas y sistemas administrativos colaborativos."
+        "title": "Hecho para complejidad operativa",
+        "body": "Gran parte de mi trabajo resuelve nomina, finanzas, inventario, boletaje, reportes y colaboracion interna."
       },
       "tools": {
-        "title": "Herramientas probadas sobre hype",
-        "body": "React, Node, almacenamiento SQL y NoSQL, y hosting practico cubren la mayor parte de lo que necesito."
+        "title": "Stack practico, ownership completo",
+        "body": "Node, SQL y NoSQL, servicios en tiempo real, diseño web y móvil para entregar un producto usable."
       }
     },
     "groups": {
-      "frontend": {
-        "title": "Base de frontend",
-        "description": "La capa de UI que uso para construir interfaces responsivas, multilenguaje y cargadas de datos."
-      },
-      "mobile": {
-        "title": "Desarrollo mobile",
-        "description": "Herramientas que uso para apps con scanner, trabajo nativo y companions moviles de plataformas internas."
-      },
       "backend": {
-        "title": "Backend y datos",
-        "description": "Servicios, flujos en tiempo real y opciones de almacenamiento que uso para productos operativos."
+        "title": "Backend",
+        "description": "Servicios, bases de datos, integraciones y capas en tiempo real en los que más me apoyo."
       },
       "delivery": {
-        "title": "Entrega y flujo de trabajo",
-        "description": "Control de versiones, contenedores y plataformas de hosting que uso para enviar e iterar."
+        "title": "Entrega y operaciones",
+        "description": "Control de versiones, contenedores, tooling y hosting para mantener proyectos estables y listos para entregar."
+      },
+      "mobile": {
+        "title": "Desarrollo móvil",
+        "description": "Apps, trabajo nativo y companions móviles de plataformas internas."
+      },
+      "frontend": {
+        "title": "Soporte de frontend",
+        "description": "Herramientas UI que uso para entregar dashboards, flujos administrativos o pantallas de cliente cuando el producto las necesita."
       }
     }
   },
   "projects": {
-    "eyebrow": "Proyectos",
-    "title": "Proyectos en los que he trabajado.",
-    "intro": "Cada proyecto se muestra como una tarjeta compacta con una descripcion breve. La estructura del carousel ya esta lista para que meta tus screenshots cuando me los pases.",
-    "privateNote": "Todos los repositorios son privados, asi que esta seccion se enfoca en el trabajo realizado y no en enlaces al codigo."
+    "eyebrow": "Proyectos"
   },
   "contact": {
     "eyebrow": "Contacto",
-    "title": "Trabajo privado, demos y walkthroughs disponibles a solicitud.",
-    "description": "La mayor parte de mi trabajo vive dentro de productos privados de empresas, asi que este portafolio se centra en los flujos, sistemas y soluciones web/mobile que construi.",
-    "note": "Cuando me pases screenshots, puedo cambiar cada slide placeholder por imagenes reales de los proyectos.",
+    "title": "Desarrollo full-stack.",
+    "description": "Software para operaciones reales de negocio, herramientas internas, dashboards, flujos de inventario, aplicaciones móviles y sistemas full-stack.",
+    "note": "Ubicado en Culiacan, Sinaloa, Mexico.",
     "fit": [
       "Herramientas internas",
       "Dashboards administrativos",
-      "Apps moviles",
-      "Flujos en tiempo real"
+      "Apps móviles",
+      "Sistemas de operación en tiempo real"
     ],
-    "privateTitle": "Para que ya esta lista esta seccion",
-    "privateBody": "Demos privadas, screenshots y walkthroughs mas profundos se pueden agregar sin volver a cambiar la estructura.",
-    "primaryCta": "Volver arriba",
-    "secondaryCta": "Ver stack"
+    "privateTitle": "Mejor encaje",
+    "privateBody": "Productos privados para empresas, flujos de reportes, operaciones de inventario, funciones en tiempo real y entrega end-to-end desde la logica backend hasta interfaces usables.",
+    "cards": {
+      "email": "Email",
+      "phone": "Telefono",
+      "linkedin": "LinkedIn",
+      "location": "Ubicacion"
+    },
+    "primaryCta": "Enviar email",
+    "secondaryCta": "Abrir LinkedIn"
   }
 }

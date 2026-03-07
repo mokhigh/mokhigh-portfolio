@@ -15,6 +15,7 @@
   width: fit-content;
   display: flex;
   justify-content: center;
+  isolation: isolate;
 }
 
 .gooey-nav-container nav {
@@ -108,9 +109,10 @@
 .gooey-nav-container .effect.filter::before {
   content: "";
   position: absolute;
-  inset: -15px;
+  inset: -8px;
   z-index: -2;
-  background: black;
+  background: transparent;
+  border-radius: 100vw;
 }
 
 .gooey-nav-container .effect.filter::after {

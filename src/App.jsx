@@ -20,7 +20,7 @@ export default function App() {
     []
   );
   const [activeIndex, setActiveIndex] = useState(0);
-  const isManualScroll = useRef(false);
+  const manualTargetIndexRef = useRef(null);
 
   const items = useMemo(() => [
     { label: t('nav.home'), href: '#home' },
@@ -30,48 +30,99 @@ export default function App() {
   ], [t]);
 
   const handleNavClick = (_, index) => {
-    isManualScroll.current = true;
+    manualTargetIndexRef.current = index;
     sectionRefs[index].current?.scrollIntoView({ behavior: 'smooth' });
     setActiveIndex(index);
-
-    setTimeout(() => {
-      isManualScroll.current = false;
-    }, 1000);
   };
 
   useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.6,
-    };
+    const getClosestSectionIndex = (sections, activationLine) => (
+      sections.reduce(
+        (closest, section, index) => {
+          const rect = section.getBoundingClientRect();
+          const distance = Math.abs(rect.top - activationLine);
 
-    const observerCallback = (entries) => {
-      if (isManualScroll.current) return;
+          if (distance < closest.distance) {
+            return { index, distance };
+          }
 
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const index = sectionRefs.findIndex(
-            (ref) => ref.current === entry.target
-          );
-          if (index !== -1 && index !== activeIndex) {
-            setActiveIndex(index);
+          return closest;
+        },
+        { index: 0, distance: Number.POSITIVE_INFINITY }
+      ).index
+    );
+
+    const sectionElements = sectionRefs
+      .map((ref) => ref.current)
+      .filter(Boolean);
+
+    if (!sectionElements.length) {
+      return undefined;
+    }
+
+    let frameId = null;
+
+    const updateActiveSection = () => {
+      frameId = null;
+      const activationLine = window.innerHeight * 0.35;
+
+      if (manualTargetIndexRef.current !== null) {
+        const targetSection = sectionRefs[manualTargetIndexRef.current]?.current;
+
+        if (targetSection) {
+          const rect = targetSection.getBoundingClientRect();
+          const targetReached =
+            rect.top <= activationLine && rect.bottom > activationLine;
+
+          if (!targetReached) {
+            setActiveIndex((currentIndex) =>
+              currentIndex === manualTargetIndexRef.current
+                ? currentIndex
+                : manualTargetIndexRef.current
+            );
+            return;
           }
         }
+
+        manualTargetIndexRef.current = null;
+      }
+
+      const visibleIndex = sectionElements.findIndex((section) => {
+        const rect = section.getBoundingClientRect();
+        return rect.top <= activationLine && rect.bottom > activationLine;
       });
+
+      const nextIndex =
+        visibleIndex === -1
+          ? getClosestSectionIndex(sectionElements, activationLine)
+          : visibleIndex;
+
+      setActiveIndex((currentIndex) =>
+        currentIndex === nextIndex ? currentIndex : nextIndex
+      );
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-    sectionRefs.forEach((ref) => {
-      if (ref.current) {
-        observer.observe(ref.current);
+    const requestUpdate = () => {
+      if (frameId !== null) {
+        return;
       }
-    });
+
+      frameId = window.requestAnimationFrame(updateActiveSection);
+    };
+
+    updateActiveSection();
+    window.addEventListener('scroll', requestUpdate, { passive: true });
+    window.addEventListener('resize', requestUpdate);
 
     return () => {
-      observer.disconnect();
+      if (frameId !== null) {
+        window.cancelAnimationFrame(frameId);
+      }
+
+      window.removeEventListener('scroll', requestUpdate);
+      window.removeEventListener('resize', requestUpdate);
     };
-  }, [activeIndex, sectionRefs]);
+  }, [sectionRefs]);
 
   return (
     <Container disableGutters maxWidth={false}>

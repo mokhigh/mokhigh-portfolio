@@ -1,7 +1,7 @@
 import DarkVeil from './components/DarkVeil';
 import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
 import DeviceHubRoundedIcon from '@mui/icons-material/DeviceHubRounded';
-import ViewQuiltRoundedIcon from '@mui/icons-material/ViewQuiltRounded';
+import StorageRoundedIcon from '@mui/icons-material/StorageRounded';
 import { Box, Grid, Paper, Stack, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { stackGroups } from '../../content/portfolio';
@@ -10,10 +10,10 @@ const About = () => {
   const { t } = useTranslation();
   const principles = [
     {
-      key: 'frontend',
-      icon: ViewQuiltRoundedIcon,
-      title: t('about.principles.frontend.title'),
-      body: t('about.principles.frontend.body'),
+      key: 'backend',
+      icon: StorageRoundedIcon,
+      title: t('about.principles.backend.title'),
+      body: t('about.principles.backend.body'),
     },
     {
       key: 'business',
@@ -97,10 +97,10 @@ const About = () => {
                             border: '1px solid rgba(255,255,255,0.08)',
                           }}
                         >
-                          <Icon sx={{ fontSize: 20 }} />
+                          <Icon sx={{ fontSize: 20, color: 'white' }} />
                         </Box>
                         <Stack spacing={0.6}>
-                          <Typography sx={{ fontWeight: 700 }}>
+                          <Typography sx={{ fontWeight: 700, color: 'white', fontSize: '1rem' }}>
                             {principle.title}
                           </Typography>
                           <Typography sx={{ color: 'var(--text-secondary)', lineHeight: 1.7, fontSize: '0.92rem' }}>
@@ -132,7 +132,7 @@ const About = () => {
                   <Grid container spacing={2.5} alignItems="center">
                     <Grid size={{ xs: 12, md: 4 }}>
                       <Stack spacing={0.8}>
-                        <Typography sx={{ fontWeight: 800, fontSize: '1.05rem' }}>
+                        <Typography sx={{ fontWeight: 800, fontSize: '1.05rem', color: 'white' }}>
                           {t(`about.groups.${group.id}.title`)}
                         </Typography>
                         <Typography sx={{ color: 'var(--text-secondary)', lineHeight: 1.75, fontSize: '0.92rem' }}>
@@ -181,7 +181,7 @@ const About = () => {
                                 {item.badge}
                               </Box>
                             )}
-                            <Typography sx={{ fontSize: '0.9rem' }}>
+                            <Typography sx={{ fontSize: '0.9rem', color: 'white' }}>
                               {item.name}
                             </Typography>
                           </Box>

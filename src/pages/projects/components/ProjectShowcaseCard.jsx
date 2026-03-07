@@ -17,17 +17,10 @@ const localize = (value, language) => {
 
 export default function ProjectShowcaseCard({ project, language }) {
   const [slideIndex, setSlideIndex] = useState(0);
-  const slides = project.slides ?? [];
-  const activeSlide = slides[slideIndex] ?? {
-    title: {
-      en: 'Screenshots coming soon',
-      es: 'Capturas proximamente',
-    },
-    hint: {
-      en: 'Add project images here when they are ready.',
-      es: 'Agrega aqui las imagenes del proyecto cuando esten listas.',
-    },
-  };
+  const slides = (project.slides ?? []).filter((slide) => slide?.image);
+  const hasSlides = slides.length > 0;
+  const activeSlide = hasSlides ? slides[slideIndex] ?? slides[0] : null;
+  const isPortraitFrame = activeSlide?.frameVariant === 'portrait';
 
   const handlePrevious = () => {
     setSlideIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
@@ -50,24 +43,47 @@ export default function ProjectShowcaseCard({ project, language }) {
       }}
     >
       <Stack spacing={2.2}>
-        <Box
-          sx={{
-            position: 'relative',
-            overflow: 'hidden',
-            minHeight: 240,
-            borderRadius: 4,
-            border: `1px solid ${project.accent}55`,
-            background: `linear-gradient(135deg, ${project.accent}2f, rgba(10, 15, 25, 0.96))`,
-          }}
-        >
-          {activeSlide.image ? (
+        {hasSlides && (
+          <Box
+            sx={{
+              position: 'relative',
+              overflow: 'hidden',
+              minHeight: { xs: 240, md: 300 },
+              aspectRatio: activeSlide?.aspectRatio ?? '16 / 10',
+              borderRadius: 4,
+              border: `1px solid ${project.accent}55`,
+              background: `linear-gradient(135deg, ${project.accent}2f, rgba(10, 15, 25, 0.96))`,
+            }}
+          >
             <Box
-              component="img"
-              src={activeSlide.image}
-              alt={localize(activeSlide.title, language)}
-              sx={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-            />
-          ) : (
+              sx={{
+                position: 'absolute',
+                inset: 0,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                px: isPortraitFrame ? { xs: 2, md: 3 } : 0,
+                py: isPortraitFrame ? { xs: 2, md: 3 } : 0,
+              }}
+            >
+              <Box
+                component="img"
+                src={activeSlide.image}
+                alt={localize(activeSlide.title, language)}
+                sx={{
+                  width: isPortraitFrame ? 'auto' : '100%',
+                  height: '100%',
+                  maxWidth: isPortraitFrame
+                    ? activeSlide?.imageMaxWidth ?? { xs: '70%', sm: '58%', md: '46%' }
+                    : '100%',
+                  objectFit: activeSlide?.imageFit ?? (isPortraitFrame ? 'contain' : 'cover'),
+                  objectPosition: activeSlide?.imagePosition ?? 'center',
+                  display: 'block',
+                  flexShrink: 0,
+                }}
+              />
+            </Box>
+
             <Stack
               spacing={1}
               justifyContent="flex-end"
@@ -76,7 +92,7 @@ export default function ProjectShowcaseCard({ project, language }) {
                 inset: 0,
                 p: 2.2,
                 background:
-                  'linear-gradient(180deg, rgba(10, 15, 25, 0.18), rgba(10, 15, 25, 0.72) 58%, rgba(10, 15, 25, 0.92))',
+                  'linear-gradient(180deg, rgba(10, 15, 25, 0.08), rgba(10, 15, 25, 0.46) 58%, rgba(10, 15, 25, 0.82))',
               }}
             >
               <Typography
@@ -92,58 +108,58 @@ export default function ProjectShowcaseCard({ project, language }) {
                 {localize(activeSlide.hint, language)}
               </Typography>
             </Stack>
-          )}
 
-          {slides.length > 1 && (
-            <>
-              <IconButton
-                onClick={handlePrevious}
-                sx={{
-                  position: 'absolute',
-                  top: 16,
-                  left: 16,
-                  backgroundColor: 'rgba(8,13,22,0.58)',
-                  color: 'white',
-                }}
-              >
-                <ChevronLeftRoundedIcon />
-              </IconButton>
-              <IconButton
-                onClick={handleNext}
-                sx={{
-                  position: 'absolute',
-                  top: 16,
-                  right: 16,
-                  backgroundColor: 'rgba(8,13,22,0.58)',
-                  color: 'white',
-                }}
-              >
-                <ChevronRightRoundedIcon />
-              </IconButton>
-              <Stack
-                direction="row"
-                spacing={0.8}
-                sx={{
-                  position: 'absolute',
-                  bottom: 16,
-                  right: 16,
-                }}
-              >
-                {slides.map((item, index) => (
-                  <Box
-                    key={`${project.id}-${localize(item.title, 'en')}-${index}`}
-                    sx={{
-                      width: 9,
-                      height: 9,
-                      borderRadius: '50%',
-                      backgroundColor: index === slideIndex ? project.accent : 'rgba(255,255,255,0.28)',
-                    }}
-                  />
-                ))}
-              </Stack>
-            </>
-          )}
-        </Box>
+            {slides.length > 1 && (
+              <>
+                <IconButton
+                  onClick={handlePrevious}
+                  sx={{
+                    position: 'absolute',
+                    top: 16,
+                    left: 16,
+                    backgroundColor: 'rgba(8,13,22,0.58)',
+                    color: 'white',
+                  }}
+                >
+                  <ChevronLeftRoundedIcon />
+                </IconButton>
+                <IconButton
+                  onClick={handleNext}
+                  sx={{
+                    position: 'absolute',
+                    top: 16,
+                    right: 16,
+                    backgroundColor: 'rgba(8,13,22,0.58)',
+                    color: 'white',
+                  }}
+                >
+                  <ChevronRightRoundedIcon />
+                </IconButton>
+                <Stack
+                  direction="row"
+                  spacing={0.8}
+                  sx={{
+                    position: 'absolute',
+                    bottom: 16,
+                    right: 16,
+                  }}
+                >
+                  {slides.map((item, index) => (
+                    <Box
+                      key={`${project.id}-${localize(item.title, 'en')}-${index}`}
+                      sx={{
+                        width: 9,
+                        height: 9,
+                        borderRadius: '50%',
+                        backgroundColor: index === slideIndex ? project.accent : 'rgba(255,255,255,0.28)',
+                      }}
+                    />
+                  ))}
+                </Stack>
+              </>
+            )}
+          </Box>
+        )}
 
         <Stack spacing={1.4}>
           <Stack spacing={0.5}>

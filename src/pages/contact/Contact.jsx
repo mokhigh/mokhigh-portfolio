@@ -1,9 +1,50 @@
+import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
+import FmdGoodRoundedIcon from '@mui/icons-material/FmdGoodRounded';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import PhoneRoundedIcon from '@mui/icons-material/PhoneRounded';
 import { Box, Button, Chip, Grid, Paper, Stack, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+
+const emailAddress = 'mokhigh@hotmail.com';
+const phoneNumber = '+52 667 470 0645';
+const phoneHref = 'tel:+526674700645';
+const linkedinUrl = 'https://www.linkedin.com/in/daniel-elorreaga-mokay';
+const linkedinLabel = 'linkedin.com/in/daniel-elorreaga-mokay';
+const locationLabel = 'Culiacan, Sinaloa, Mexico';
 
 const Contact = () => {
   const { t } = useTranslation();
   const fitAreas = t('contact.fit', { returnObjects: true });
+  const contactItems = [
+    {
+      id: 'email',
+      label: t('contact.cards.email'),
+      value: emailAddress,
+      href: `mailto:${emailAddress}`,
+      icon: <EmailRoundedIcon sx={{ fontSize: 22 }} />,
+    },
+    {
+      id: 'phone',
+      label: t('contact.cards.phone'),
+      value: phoneNumber,
+      href: phoneHref,
+      icon: <PhoneRoundedIcon sx={{ fontSize: 22 }} />,
+    },
+    {
+      id: 'linkedin',
+      label: t('contact.cards.linkedin'),
+      value: linkedinLabel,
+      href: linkedinUrl,
+      external: true,
+      icon: <LinkedInIcon sx={{ fontSize: 22 }} />,
+    },
+    {
+      id: 'location',
+      label: t('contact.cards.location'),
+      value: locationLabel,
+      icon: <FmdGoodRoundedIcon sx={{ fontSize: 22 }} />,
+    },
+  ];
 
   return (
     <Box
@@ -28,91 +69,155 @@ const Contact = () => {
           boxShadow: '0 30px 80px rgba(0, 0, 0, 0.35)',
         }}
       >
-        <Grid container spacing={{ xs: 4, md: 5 }} alignItems="center">
+        <Grid container spacing={{ xs: 4, md: 5 }} alignItems="stretch">
           <Grid size={{ xs: 12, lg: 7 }}>
-            <Stack spacing={2.2}>
-              <Typography
-                variant="overline"
-                sx={{ color: 'var(--accent)', letterSpacing: '0.22em', fontWeight: 700 }}
-              >
-                {t('contact.eyebrow')}
-              </Typography>
+            <Stack spacing={2.4} sx={{ height: '100%', justifyContent: 'space-between' }}>
+              <Stack spacing={2.2}>
+                <Typography
+                  variant="overline"
+                  sx={{ color: 'var(--accent)', letterSpacing: '0.22em', fontWeight: 700 }}
+                >
+                  {t('contact.eyebrow')}
+                </Typography>
 
-              <Typography
-                variant="h2"
-                sx={{
-                  fontWeight: 800,
-                  lineHeight: 1.03,
-                  letterSpacing: '-0.05em',
-                  fontSize: { xs: '2.2rem', md: '3.3rem' },
-                }}
-              >
-                {t('contact.title')}
-              </Typography>
+                <Typography
+                  variant="h2"
+                  sx={{
+                    fontWeight: 800,
+                    lineHeight: 1.03,
+                    letterSpacing: '-0.05em',
+                    fontSize: { xs: '2.2rem', md: '3.3rem' },
+                    color: 'white',
+                  }}
+                >
+                  {t('contact.title')}
+                </Typography>
 
-              <Typography sx={{ color: 'var(--text-secondary)', lineHeight: 1.85, maxWidth: 720 }}>
-                {t('contact.description')}
-              </Typography>
+                <Typography sx={{ color: 'var(--text-secondary)', lineHeight: 1.85, maxWidth: 720 }}>
+                  {t('contact.description')}
+                </Typography>
 
-              <Stack direction="row" flexWrap="wrap" gap={1}>
-                {fitAreas.map((area) => (
-                  <Chip
-                    key={area}
-                    label={area}
-                    sx={{
-                      borderRadius: '999px',
-                      color: 'white',
-                      backgroundColor: 'rgba(255,255,255,0.06)',
-                      border: '1px solid rgba(255,255,255,0.1)',
-                    }}
-                  />
-                ))}
+                <Stack direction="row" flexWrap="wrap" gap={1}>
+                  {fitAreas.map((area) => (
+                    <Chip
+                      key={area}
+                      label={area}
+                      sx={{
+                        borderRadius: '999px',
+                        color: 'white',
+                        backgroundColor: 'rgba(255,255,255,0.06)',
+                        border: '1px solid rgba(255,255,255,0.1)',
+                      }}
+                    />
+                  ))}
+                </Stack>
+
+                <Typography sx={{ color: 'rgba(255,255,255,0.62)', maxWidth: 640 }}>
+                  {t('contact.note')}
+                </Typography>
               </Stack>
-
-              <Typography sx={{ color: 'rgba(255,255,255,0.62)', maxWidth: 640 }}>
-                {t('contact.note')}
-              </Typography>
             </Stack>
           </Grid>
 
           <Grid size={{ xs: 12, lg: 5 }}>
             <Stack spacing={1.4}>
-              <Paper
-                elevation={0}
-                sx={{
-                  borderRadius: 4,
-                  p: 2.2,
-                  backgroundColor: 'rgba(255,255,255,0.04)',
-                  border: '1px solid rgba(255,255,255,0.1)',
-                }}
-              >
-                <Typography sx={{ fontWeight: 700, mb: 0.8 }}>
-                  {t('contact.privateTitle')}
-                </Typography>
-                <Typography sx={{ color: 'rgba(255,255,255,0.72)', lineHeight: 1.7 }}>
-                  {t('contact.privateBody')}
-                </Typography>
-              </Paper>
+              {contactItems.map((item) => {
+                const linkProps = item.href
+                  ? {
+                    component: 'a',
+                    href: item.href,
+                    ...(item.external ? { target: '_blank', rel: 'noreferrer' } : {}),
+                  }
+                  : {};
 
-              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.4}>
+                return (
+                  <Paper
+                    key={item.id}
+                    elevation={0}
+                    {...linkProps}
+                    sx={{
+                      display: 'block',
+                      borderRadius: 4,
+                      p: 2,
+                      backgroundColor: 'rgba(255,255,255,0.04)',
+                      border: '1px solid rgba(255,255,255,0.1)',
+                      textDecoration: 'none',
+                      transition: 'transform 180ms ease, border-color 180ms ease, background-color 180ms ease',
+                      '&:hover': item.href
+                        ? {
+                          transform: 'translateY(-2px)',
+                          borderColor: 'rgba(120,232,255,0.34)',
+                          backgroundColor: 'rgba(255,255,255,0.06)',
+                        }
+                        : undefined,
+                    }}
+                  >
+                    <Stack direction="row" spacing={1.5} alignItems="center">
+                      <Box
+                        sx={{
+                          width: 46,
+                          height: 46,
+                          borderRadius: 3,
+                          display: 'grid',
+                          placeItems: 'center',
+                          flexShrink: 0,
+                          color: 'var(--accent)',
+                          backgroundColor: 'rgba(120,232,255,0.12)',
+                          border: '1px solid rgba(120,232,255,0.2)',
+                        }}
+                      >
+                        {item.icon}
+                      </Box>
+                      <Box sx={{ minWidth: 0 }}>
+                        <Typography
+                          variant="body2"
+                          sx={{
+                            color: 'rgba(255,255,255,0.58)',
+                            letterSpacing: '0.14em',
+                            textTransform: 'uppercase',
+                            mb: 0.45,
+                          }}
+                        >
+                          {item.label}
+                        </Typography>
+                        <Typography
+                          sx={{
+                            color: 'white',
+                            fontWeight: 700,
+                            lineHeight: 1.5,
+                            overflowWrap: 'anywhere',
+                          }}
+                        >
+                          {item.value}
+                        </Typography>
+                      </Box>
+                    </Stack>
+                  </Paper>
+                );
+              })}
+
+              {/* <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.4} sx={{ pt: 0.6 }}>
                 <Button
-                  href="#home"
-                  variant="outlined"
+                  href={`mailto:${emailAddress}`}
+                  variant="contained"
                   sx={{
                     flex: 1,
-                    px: 2,
+                    px: 2.2,
                     py: 1.4,
                     borderRadius: 4,
                     textTransform: 'none',
-                    color: 'white',
-                    borderColor: 'rgba(255,255,255,0.14)',
-                    backgroundColor: 'rgba(255,255,255,0.04)',
+                    fontWeight: 700,
+                    color: '#041018',
+                    background: 'linear-gradient(135deg, #78e8ff, #8ef0cf)',
+                    boxShadow: '0 16px 36px rgba(120, 232, 255, 0.22)',
                   }}
                 >
                   {t('contact.primaryCta')}
                 </Button>
                 <Button
-                  href="#about"
+                  href={linkedinUrl}
+                  target="_blank"
+                  rel="noreferrer"
                   variant="outlined"
                   sx={{
                     flex: 1,
@@ -127,7 +232,7 @@ const Contact = () => {
                 >
                   {t('contact.secondaryCta')}
                 </Button>
-              </Stack>
+              </Stack> */}
             </Stack>
           </Grid>
         </Grid>

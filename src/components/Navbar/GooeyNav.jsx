@@ -100,8 +100,10 @@ const GooeyNav = ({
   };
 
   const handleClick = (e, index) => {
-    const liEl = e.currentTarget;
+    e.preventDefault?.();
+    const liEl = e.currentTarget.closest?.("li") ?? e.currentTarget;
     if (activeIndex === index) return;
+    if (!liEl) return;
 
     updateEffectPosition(liEl);
 
