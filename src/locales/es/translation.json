@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "home": {
+    "welcome": "Hola, soy Daniel Elorreaga Mokay.",
+    "description": "Desarrollador full-stack especializado en",
+    "webLabel": "Web",
+    "mobileLabel": "Mobile",
+    "summary": "Construyo software interno, landing pages, apps moviles y herramientas operativas con mucho dato para flujos reales de negocio.",
+    "highlightTags": [
+      "Herramientas internas",
+      "Sistemas en tiempo real",
+      "Reportes y auditorias",
+      "Apps moviles"
+    ],
+    "primaryCta": "Ver proyectos",
+    "secondaryCta": "Ver stack",
+    "calloutTitle": "La mayor parte de mi trabajo vive en productos privados.",
+    "calloutBody": "Este portafolio se enfoca en lo que construi, los flujos que mejore y el tipo de sistemas que puedo llevar de punta a punta."
+  },
+  "about": {
+    "eyebrow": "Stack",
+    "title": "Stack tecnologico con estructura, no una coleccion de stickers.",
+    "intro": "Trabajo tanto en web como en mobile. Las herramientas de abajo son las que uso cuando el trabajo necesita UX clara, manejo confiable de datos y entrega practica.",
+    "principles": {
+      "frontend": {
+        "title": "Primero frontend, pero no solo frontend",
+        "body": "Me importa mucho la sensacion del UI, pero tambien puedo hacerme cargo del API, el flujo de datos y el camino de despliegue."
+      },
+      "business": {
+        "title": "Pensado para flujos reales",
+        "body": "Mi mejor trabajo vive en dashboards, reportes, herramientas internas y sistemas administrativos colaborativos."
+      },
+      "tools": {
+        "title": "Herramientas probadas sobre hype",
+        "body": "React, Node, almacenamiento SQL y NoSQL, y hosting practico cubren la mayor parte de lo que necesito."
+      }
+    },
+    "groups": {
+      "frontend": {
+        "title": "Base de frontend",
+        "description": "La capa de UI que uso para construir interfaces responsivas, multilenguaje y cargadas de datos."
+      },
+      "mobile": {
+        "title": "Desarrollo mobile",
+        "description": "Herramientas que uso para apps con scanner, trabajo nativo y companions moviles de plataformas internas."
+      },
+      "backend": {
+        "title": "Backend y datos",
+        "description": "Servicios, flujos en tiempo real y opciones de almacenamiento que uso para productos operativos."
+      },
+      "delivery": {
+        "title": "Entrega y flujo de trabajo",
+        "description": "Control de versiones, contenedores y plataformas de hosting que uso para enviar e iterar."
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "Proyectos",
+    "title": "Proyectos en los que he trabajado.",
+    "intro": "Cada proyecto se muestra como una tarjeta compacta con una descripcion breve. La estructura del carousel ya esta lista para que meta tus screenshots cuando me los pases.",
+    "privateNote": "Todos los repositorios son privados, asi que esta seccion se enfoca en el trabajo realizado y no en enlaces al codigo."
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "Trabajo privado, demos y walkthroughs disponibles a solicitud.",
+    "description": "La mayor parte de mi trabajo vive dentro de productos privados de empresas, asi que este portafolio se centra en los flujos, sistemas y soluciones web/mobile que construi.",
+    "note": "Cuando me pases screenshots, puedo cambiar cada slide placeholder por imagenes reales de los proyectos.",
+    "fit": [
+      "Herramientas internas",
+      "Dashboards administrativos",
+      "Apps moviles",
+      "Flujos en tiempo real"
+    ],
+    "privateTitle": "Para que ya esta lista esta seccion",
+    "privateBody": "Demos privadas, screenshots y walkthroughs mas profundos se pueden agregar sin volver a cambiar la estructura.",
+    "primaryCta": "Volver arriba",
+    "secondaryCta": "Ver stack"
+  }
+}
