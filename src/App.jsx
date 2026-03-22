@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect, useMemo } from 'react';
-import { Container, Box } from '@mui/material';
+import { Container, Box, useMediaQuery } from '@mui/material';
 import GooeyNav from './components/Navbar/GooeyNav';
+import MobileNav from './components/Navbar/MobileNav';
 import Home from './pages/home/Home';
 import About from './pages/about/About';
 import Projects from './pages/projects/Projects';
@@ -11,6 +12,7 @@ import { LanguageSwitcher } from './components/LanguageSwitcher';
 
 export default function App() {
   const { t } = useTranslation();
+  const isMobileNav = useMediaQuery('(max-width:900px)');
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
@@ -126,22 +128,33 @@ export default function App() {
 
   return (
     <Container disableGutters maxWidth={false}>
-      <Box sx={{ position: 'fixed', width: '100%', zIndex: 1000 }}>
-        <GooeyNav
-          items={items}
-          particleCount={15}
-          particleDistances={[90, 10]}
-          particleR={100}
-          initialActiveIndex={activeIndex}
-          animationTime={600}
-          timeVariance={300}
-          colors={[1, 2, 3, 1, 2, 3, 1, 4]}
-          onClick={handleNavClick}
-          activeIndex={activeIndex}
-        />
-        <Box sx={{ position: 'absolute', top: 0, right: 0, padding: '1.5em' }}>
-          <LanguageSwitcher />
-        </Box>
+      <Box sx={{ position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 1000 }}>
+        {isMobileNav ? (
+          <MobileNav
+            items={items}
+            activeIndex={activeIndex}
+            onClick={handleNavClick}
+            trailing={<LanguageSwitcher />}
+          />
+        ) : (
+          <Box sx={{ position: 'relative' }}>
+            <GooeyNav
+              items={items}
+              particleCount={15}
+              particleDistances={[90, 10]}
+              particleR={100}
+              initialActiveIndex={activeIndex}
+              animationTime={600}
+              timeVariance={300}
+              colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+              onClick={handleNavClick}
+              activeIndex={activeIndex}
+            />
+            <Box sx={{ position: 'absolute', top: 0, right: 0, padding: '1.5em' }}>
+              <LanguageSwitcher />
+            </Box>
+          </Box>
+        )}
       </Box>
       <section ref={sectionRefs[0]} id="home"><Home /></section>
       <section ref={sectionRefs[1]} id="about"><About /></section>

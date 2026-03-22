@@ -3,7 +3,8 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "menu": "Menu"
   },
   "home": {
     "welcome": "Hi, I’m Daniel Elorreaga Mokay",
@@ -26,36 +27,44 @@
     "eyebrow": "Stack",
     "title": "Stack built for real business systems.",
     "intro": "APIs, data models, integrations, realtime flows, operational logic and web or mobile layer needed to ship the product.",
+    "introMobile": "APIs, integrations, realtime flows, and the web or mobile layer needed to ship the product.",
     "principles": {
       "backend": {
         "title": "Backend first",
-        "body": "I am strongest in APIs, business logic, data modeling, integrations, and the deployment path around them."
+        "body": "I am strongest in APIs, business logic, data modeling, integrations, and the deployment path around them.",
+        "bodyMobile": "Strongest in APIs, business logic, data modeling, and deployment."
       },
       "business": {
         "title": "Built for operational complexity",
-        "body": "Most of my work supports payroll, finance, inventory, ticketing, reporting, and internal collaboration."
+        "body": "Most of my work supports payroll, finance, inventory, ticketing, reporting, and internal collaboration.",
+        "bodyMobile": "Most of my work supports payroll, finance, inventory, reporting, and internal workflows."
       },
       "tools": {
         "title": "Practical stack, end-to-end ownership",
-        "body": "Node, SQL and NoSQL storage, realtime services, mobile and frontend layers to deliver a usable product."
+        "body": "Node, SQL and NoSQL storage, realtime services, mobile and frontend layers to deliver a usable product.",
+        "bodyMobile": "Node, databases, realtime services, and UI layers to deliver a usable product."
       }
     },
     "groups": {
       "backend": {
         "title": "Backend core",
-        "description": "The services, data stores, integrations, and realtime layers I rely on most."
+        "description": "The services, data stores, integrations, and realtime layers I rely on most.",
+        "descriptionMobile": "Services, data stores, integrations, and realtime layers."
       },
       "delivery": {
         "title": "Delivery and operations",
-        "description": "Version control, containers, tooling, and hosting that keep projects stable and shippable."
+        "description": "Version control, containers, tooling, and hosting that keep projects stable and shippable.",
+        "descriptionMobile": "Tooling, hosting, and delivery workflows that keep projects stable."
       },
       "mobile": {
         "title": "Mobile development",
-        "description": "Tools I use for scanner-based apps, native work, and mobile companions for internal platforms."
+        "description": "Tools I use for scanner-based apps, native work, and mobile companions for internal platforms.",
+        "descriptionMobile": "Scanner-based apps, native work, and internal mobile companions."
       },
       "frontend": {
         "title": "Frontend support",
-        "description": "UI Tools I use to deliver dashboards, admin flows, or client-facing screens when the product needs them."
+        "description": "UI Tools I use to deliver dashboards, admin flows, or client-facing screens when the product needs them.",
+        "descriptionMobile": "Dashboards, admin flows, and client-facing screens when needed."
       }
     }
   },

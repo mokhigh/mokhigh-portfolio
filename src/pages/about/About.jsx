@@ -2,30 +2,31 @@ import DarkVeil from './components/DarkVeil';
 import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
 import DeviceHubRoundedIcon from '@mui/icons-material/DeviceHubRounded';
 import StorageRoundedIcon from '@mui/icons-material/StorageRounded';
-import { Box, Grid, Paper, Stack, Typography } from '@mui/material';
+import { Box, Grid, Paper, Stack, Typography, useMediaQuery } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { stackGroups } from '../../content/portfolio';
 
 const About = () => {
   const { t } = useTranslation();
+  const isMobile = useMediaQuery('(max-width:900px)');
   const principles = [
     {
       key: 'backend',
       icon: StorageRoundedIcon,
       title: t('about.principles.backend.title'),
-      body: t('about.principles.backend.body'),
+      body: t(isMobile ? 'about.principles.backend.bodyMobile' : 'about.principles.backend.body'),
     },
     {
       key: 'business',
       icon: DeviceHubRoundedIcon,
       title: t('about.principles.business.title'),
-      body: t('about.principles.business.body'),
+      body: t(isMobile ? 'about.principles.business.bodyMobile' : 'about.principles.business.body'),
     },
     {
       key: 'tools',
       icon: BoltRoundedIcon,
       title: t('about.principles.tools.title'),
-      body: t('about.principles.tools.body'),
+      body: t(isMobile ? 'about.principles.tools.bodyMobile' : 'about.principles.tools.body'),
     },
   ];
 
@@ -42,9 +43,9 @@ const About = () => {
       <DarkVeil speed={3} hueShift={-10} />
 
       <Box sx={{ position: 'relative', zIndex: 1, color: 'white' }}>
-        <Grid container spacing={{ xs: 4, md: 5 }}>
+        <Grid container spacing={{ xs: 3, md: 5 }}>
           <Grid size={{ xs: 12, lg: 4 }}>
-            <Stack spacing={2.4}>
+            <Stack spacing={{ xs: 2, md: 2.4 }}>
               <Typography
                 variant="overline"
                 sx={{ color: 'var(--accent)', letterSpacing: '0.22em', fontWeight: 700 }}
@@ -64,11 +65,17 @@ const About = () => {
                 {t('about.title')}
               </Typography>
 
-              <Typography sx={{ color: 'var(--text-secondary)', lineHeight: 1.85 }}>
-                {t('about.intro')}
+              <Typography
+                sx={{
+                  color: 'var(--text-secondary)',
+                  lineHeight: { xs: 1.72, md: 1.85 },
+                  fontSize: { xs: '0.96rem', md: '1rem' },
+                }}
+              >
+                {t(isMobile ? 'about.introMobile' : 'about.intro')}
               </Typography>
 
-              <Stack spacing={1.6}>
+              <Stack spacing={{ xs: 1.2, md: 1.6 }}>
                 {principles.map((principle) => {
                   const Icon = principle.icon;
 
@@ -78,7 +85,7 @@ const About = () => {
                       elevation={0}
                       sx={{
                         borderRadius: 4,
-                        p: 2.2,
+                        p: { xs: 1.8, md: 2.2 },
                         backgroundColor: 'rgba(7, 10, 18, 0.72)',
                         border: '1px solid rgba(255,255,255,0.08)',
                         backdropFilter: 'blur(18px)',
@@ -103,7 +110,13 @@ const About = () => {
                           <Typography sx={{ fontWeight: 700, color: 'white', fontSize: '1rem' }}>
                             {principle.title}
                           </Typography>
-                          <Typography sx={{ color: 'var(--text-secondary)', lineHeight: 1.7, fontSize: '0.92rem' }}>
+                          <Typography
+                            sx={{
+                              color: 'var(--text-secondary)',
+                              lineHeight: { xs: 1.62, md: 1.7 },
+                              fontSize: { xs: '0.88rem', md: '0.92rem' },
+                            }}
+                          >
                             {principle.body}
                           </Typography>
                         </Stack>
@@ -116,7 +129,7 @@ const About = () => {
           </Grid>
 
           <Grid size={{ xs: 12, lg: 8 }}>
-            <Stack spacing={2}>
+            <Stack spacing={{ xs: 1.5, md: 2 }}>
               {stackGroups.map((group) => (
                 <Paper
                   key={group.id}
@@ -131,12 +144,22 @@ const About = () => {
                 >
                   <Grid container spacing={2.5} alignItems="center">
                     <Grid size={{ xs: 12, md: 4 }}>
-                      <Stack spacing={0.8}>
+                      <Stack spacing={{ xs: 0.5, md: 0.8 }}>
                         <Typography sx={{ fontWeight: 800, fontSize: '1.05rem', color: 'white' }}>
                           {t(`about.groups.${group.id}.title`)}
                         </Typography>
-                        <Typography sx={{ color: 'var(--text-secondary)', lineHeight: 1.75, fontSize: '0.92rem' }}>
-                          {t(`about.groups.${group.id}.description`)}
+                        <Typography
+                          sx={{
+                            color: 'var(--text-secondary)',
+                            lineHeight: { xs: 1.62, md: 1.75 },
+                            fontSize: { xs: '0.88rem', md: '0.92rem' },
+                          }}
+                        >
+                          {t(
+                            isMobile
+                              ? `about.groups.${group.id}.descriptionMobile`
+                              : `about.groups.${group.id}.description`
+                          )}
                         </Typography>
                       </Stack>
                     </Grid>

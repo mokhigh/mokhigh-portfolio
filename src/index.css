@@ -46,6 +46,12 @@ section {
   scroll-margin-top: 108px;
 }
 
+@media (max-width: 900px) {
+  section {
+    scroll-margin-top: 88px;
+  }
+}
+
 ::selection {
   color: #fff;
   background: rgba(120, 232, 255, 0.32);

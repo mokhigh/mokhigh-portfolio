@@ -3,7 +3,8 @@
     "home": "Inicio",
     "about": "Acerca de",
     "projects": "Proyectos",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "menu": "Menu"
   },
   "home": {
     "welcome": "Hola, soy Daniel Elorreaga Mokay",
@@ -26,36 +27,44 @@
     "eyebrow": "Stack",
     "title": "Stack orientado para sistemas reales de negocio.",
     "intro": "APIs, modelado de datos, integraciones, flujos en tiempo real, logica operativa y diseño web o móvil necesarios para entregar el producto.",
+    "introMobile": "APIs, integraciones, flujos en tiempo real y la capa web o móvil para entregar el producto.",
     "principles": {
       "backend": {
         "title": "Backend first",
-        "body": "Fortaleza en APIs, logica de negocio, modelado de datos, integraciones y el despliegue de éstos."
+        "body": "Fortaleza en APIs, logica de negocio, modelado de datos, integraciones y el despliegue de éstos.",
+        "bodyMobile": "Fortaleza en APIs, logica de negocio, modelado de datos y despliegue."
       },
       "business": {
         "title": "Hecho para complejidad operativa",
-        "body": "Gran parte de mi trabajo resuelve nomina, finanzas, inventario, boletaje, reportes y colaboracion interna."
+        "body": "Gran parte de mi trabajo resuelve nomina, finanzas, inventario, boletaje, reportes y colaboracion interna.",
+        "bodyMobile": "Trabajo enfocado en nomina, finanzas, inventario, reportes y flujos internos."
       },
       "tools": {
         "title": "Stack practico, ownership completo",
-        "body": "Node, SQL y NoSQL, servicios en tiempo real, diseño web y móvil para entregar un producto usable."
+        "body": "Node, SQL y NoSQL, servicios en tiempo real, diseño web y móvil para entregar un producto usable.",
+        "bodyMobile": "Node, bases de datos, servicios en tiempo real y capas UI para entregar un producto usable."
       }
     },
     "groups": {
       "backend": {
         "title": "Backend",
-        "description": "Servicios, bases de datos, integraciones y capas en tiempo real en los que más me apoyo."
+        "description": "Servicios, bases de datos, integraciones y capas en tiempo real en los que más me apoyo.",
+        "descriptionMobile": "Servicios, bases de datos, integraciones y tiempo real."
       },
       "delivery": {
         "title": "Entrega y operaciones",
-        "description": "Control de versiones, contenedores, tooling y hosting para mantener proyectos estables y listos para entregar."
+        "description": "Control de versiones, contenedores, tooling y hosting para mantener proyectos estables y listos para entregar.",
+        "descriptionMobile": "Tooling, hosting y flujos de entrega para mantener estabilidad."
       },
       "mobile": {
         "title": "Desarrollo móvil",
-        "description": "Apps, trabajo nativo y companions móviles de plataformas internas."
+        "description": "Apps, trabajo nativo y companions móviles de plataformas internas.",
+        "descriptionMobile": "Apps con scanner, trabajo nativo y companions móviles internos."
       },
       "frontend": {
         "title": "Soporte de frontend",
-        "description": "Herramientas UI que uso para entregar dashboards, flujos administrativos o pantallas de cliente cuando el producto las necesita."
+        "description": "Herramientas UI que uso para entregar dashboards, flujos administrativos o pantallas de cliente cuando el producto las necesita.",
+        "descriptionMobile": "Dashboards, flujos administrativos y pantallas de cliente cuando se necesitan."
       }
     }
   },

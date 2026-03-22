@@ -130,6 +130,21 @@
   animation: pill 0.3s ease both;
 }
 
+@media (max-width: 1200px) {
+  .gooey-nav-container {
+    padding: 0.75em 0;
+  }
+
+  .gooey-nav-container nav ul {
+    gap: 1.25em;
+  }
+
+  .gooey-nav-container nav ul li a {
+    padding: 0.55em 0.9em;
+    font-size: 0.95rem;
+  }
+}
+
 @keyframes pill {
   to {
     transform: scale(1);
