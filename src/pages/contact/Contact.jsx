@@ -51,7 +51,7 @@ const Contact = () => {
       sx={{
         minHeight: '88vh',
         px: { xs: 2, md: 4, xl: 6 },
-        py: { xs: 10, md: 12 },
+        py: { xs: 6, md: 8 },
         display: 'flex',
         alignItems: 'center',
       }}

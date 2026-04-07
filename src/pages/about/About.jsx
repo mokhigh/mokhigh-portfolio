@@ -37,7 +37,7 @@ const About = () => {
         position: 'relative',
         overflow: 'hidden',
         px: { xs: 2, md: 4, xl: 6 },
-        py: { xs: 10, md: 12 },
+        py: { xs: 6, md: 8 },
       }}
     >
       <DarkVeil speed={3} hueShift={-10} />
