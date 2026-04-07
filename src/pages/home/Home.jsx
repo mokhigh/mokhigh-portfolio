@@ -16,7 +16,7 @@ const Home = () => {
         minHeight: '100vh',
         px: { xs: 2, md: 4, xl: 6 },
         pt: { xs: 14, md: 18 },
-        pb: { xs: 8, md: 10 },
+        pb: { xs: 4, md: 6 },
       }}
     >
       <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">

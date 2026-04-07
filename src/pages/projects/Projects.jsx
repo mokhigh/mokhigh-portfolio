@@ -12,7 +12,7 @@ const Projects = () => {
         minHeight: '100vh',
         overflowX: 'hidden',
         px: { xs: 2, md: 4, xl: 6 },
-        py: { xs: 10, md: 12 },
+        py: { xs: 6, md: 8 },
       }}
     >
       <Stack spacing={1.6} sx={{ mb: 4 }}>
