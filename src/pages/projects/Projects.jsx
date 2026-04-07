@@ -10,6 +10,7 @@ const Projects = () => {
     <Box
       sx={{
         minHeight: '100vh',
+        overflowX: 'hidden',
         px: { xs: 2, md: 4, xl: 6 },
         py: { xs: 10, md: 12 },
       }}

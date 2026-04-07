@@ -37,6 +37,7 @@ export default function ProjectShowcaseCard({ project, language }) {
         height: '100%',
         borderRadius: 5,
         p: 2,
+        overflow: 'hidden',
         backgroundColor: 'rgba(8, 13, 22, 0.84)',
         border: `1px solid ${project.accent}33`,
         boxShadow: '0 20px 50px rgba(0, 0, 0, 0.24)',
@@ -48,6 +49,7 @@ export default function ProjectShowcaseCard({ project, language }) {
             sx={{
               position: 'relative',
               overflow: 'hidden',
+              width: '100%',
               minHeight: { xs: 240, md: 300 },
               aspectRatio: activeSlide?.aspectRatio ?? '16 / 10',
               borderRadius: 4,
