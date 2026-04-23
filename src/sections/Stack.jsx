@@ -29,7 +29,7 @@ const CARDS = [
   { cat: 'fe', name: 'React', color: 'c-cyan', icon: ReactIcon },
   { cat: 'be', name: 'Node.js', color: 'c-mag', icon: NodejsIcon },
   { cat: 'be', name: 'Express', color: 'c-cyan', icon: ExpressIcon },
-  { cat: 'db', name: 'MongoDB', color: 'c-cyan', icon: MongodbIcon },
+  { cat: 'db', name: 'Mongo', color: 'c-cyan', icon: MongodbIcon },
   { cat: 'mob', name: 'Swift', color: 'c-vio', icon: SwiftIcon },
   { cat: 'mob', name: 'Kotlin', color: 'c-mag', icon: KotlinIcon },
 ];
