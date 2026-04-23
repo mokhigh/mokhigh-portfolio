@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import './i18n/i18n';
 import Cursor from './components/Cursor';
 import Nav from './components/Nav';
@@ -17,6 +18,7 @@ export default function App() {
       <About />
       <Stack />
       <Contact />
+      <SpeedInsights />
     </>
   );
 }
