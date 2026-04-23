@@ -4,7 +4,7 @@ import ReactIconUrl from '../assets/icons/ReactIcon.svg';
 import NextIconUrl from '../assets/icons/NextjsIcon.svg';
 import MongoDBUrl from '../assets/icons/MongodbIcon.svg';
 import ExpressUrl from '../assets/icons/ExpressIcon.svg';
-import PostgreSQLUrl from '../assets/icons/PostgreSQLIcon.svg';
+import PostgreSQLUrl from '../assets/icons/PostgresqlIcon.svg';
 import MUIUrl from '../assets/icons/MaterialIcon.svg';
 import NodeJsUrl from '../assets/icons/NodejsIcon.svg';
 import SocketIOUrl from '../assets/icons/SocketIOIcon.svg';
