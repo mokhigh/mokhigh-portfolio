@@ -7,7 +7,7 @@ import ExpressUrl from '../assets/icons/ExpressIcon.svg';
 import PostgreSQLUrl from '../assets/icons/PostgresqlIcon.svg';
 import MUIUrl from '../assets/icons/MaterialIcon.svg';
 import NodeJsUrl from '../assets/icons/NodejsIcon.svg';
-import SocketIOUrl from '../assets/icons/SocketIOIcon.svg';
+import SocketIOUrl from '../assets/icons/SocketioIcon.svg';
 
 const TOYS = [
   { cls: 'icon', svg: JsIconUrl },
