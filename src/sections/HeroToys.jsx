@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import JsIconUrl from '../assets/icons/JavascriptIcon.svg';
 import ReactIconUrl from '../assets/icons/ReactIcon.svg';
 import NextIconUrl from '../assets/icons/NextjsIcon.svg';
-import MongoDBUrl from '../assets/icons/MongoDBIcon.svg';
+import MongoDBUrl from '../assets/icons/MongodbIcon.svg';
 import ExpressUrl from '../assets/icons/ExpressIcon.svg';
 import PostgreSQLUrl from '../assets/icons/PostgreSQLIcon.svg';
 import MUIUrl from '../assets/icons/MaterialIcon.svg';
