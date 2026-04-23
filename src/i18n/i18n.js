@@ -10,9 +10,13 @@ i18n
   .use(initReactI18next)
   .init({
     fallbackLng: 'en',
-    debug: true,
-    interpolation: {
-      escapeValue: false,
+    supportedLngs: ['en', 'es'],
+    load: 'languageOnly',
+    interpolation: { escapeValue: false },
+    detection: {
+      order: ['localStorage', 'navigator'],
+      lookupLocalStorage: 'mokhigh.lang',
+      caches: ['localStorage'],
     },
     resources: {
       en: { translation: en },

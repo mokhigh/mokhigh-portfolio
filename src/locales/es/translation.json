@@ -1,96 +1,56 @@
 {
   "nav": {
-    "home": "Inicio",
-    "about": "Acerca de",
-    "projects": "Proyectos",
-    "contact": "Contacto",
-    "menu": "Menu"
+    "about": "Sobre mí",
+    "stack": "Stack",
+    "contact": "Contacto"
   },
-  "home": {
-    "welcome": "Hola, soy Daniel Elorreaga Mokay",
-    "description": "Desarrollador full-stack",
-    "webLabel": "Web",
-    "mobileLabel": "Mobile",
-    "summary": "Construyo software de uso interno, landing pages, apps móviles y herramientas operativas para flujos reales de negocio.",
-    "highlightTags": [
-      "Herramientas internas",
-      "Sistemas en tiempo real",
-      "Reportes y auditorias",
-      "Apps móviles"
-    ],
-    "primaryCta": "Ver proyectos",
-    "secondaryCta": "Ver stack",
-    "calloutTitle": "La mayor parte de mi trabajo vive en productos privados.",
-    "calloutBody": "Este portafolio se enfoca en lo que construi, los flujos que mejore y el tipo de sistemas que puedo llevar de punta a punta."
+  "hero": {
+    "status": "Disponible para trabajar",
+    "loc": "Culiacán, Sinaloa · MX",
+    "role1": "Desarrollador",
+    "role2": "full-stack",
+    "role3": "especializado en aplicaciones web y móviles.",
+    "drag": "arrastra los íconos→",
+    "scroll": "desliza"
   },
   "about": {
-    "eyebrow": "Stack",
-    "title": "Stack orientado para sistemas reales de negocio.",
-    "intro": "APIs, modelado de datos, integraciones, flujos en tiempo real, logica operativa y diseño web o móvil necesarios para entregar el producto.",
-    "introMobile": "APIs, integraciones, flujos en tiempo real y la capa web o móvil para entregar el producto.",
-    "principles": {
-      "backend": {
-        "title": "Backend first",
-        "body": "Fortaleza en APIs, logica de negocio, modelado de datos, integraciones y el despliegue de éstos.",
-        "bodyMobile": "Fortaleza en APIs, logica de negocio, modelado de datos y despliegue."
-      },
-      "business": {
-        "title": "Hecho para complejidad operativa",
-        "body": "Gran parte de mi trabajo resuelve nomina, finanzas, inventario, boletaje, reportes y colaboracion interna.",
-        "bodyMobile": "Trabajo enfocado en nomina, finanzas, inventario, reportes y flujos internos."
-      },
-      "tools": {
-        "title": "Stack practico, ownership completo",
-        "body": "Node, SQL y NoSQL, servicios en tiempo real, diseño web y móvil para entregar un producto usable.",
-        "bodyMobile": "Node, bases de datos, servicios en tiempo real y capas UI para entregar un producto usable."
-      }
-    },
-    "groups": {
-      "backend": {
-        "title": "Backend",
-        "description": "Servicios, bases de datos, integraciones y capas en tiempo real en los que más me apoyo.",
-        "descriptionMobile": "Servicios, bases de datos, integraciones y tiempo real."
-      },
-      "delivery": {
-        "title": "Entrega y operaciones",
-        "description": "Control de versiones, contenedores, tooling y hosting para mantener proyectos estables y listos para entregar.",
-        "descriptionMobile": "Tooling, hosting y flujos de entrega para mantener estabilidad."
-      },
-      "mobile": {
-        "title": "Desarrollo móvil",
-        "description": "Apps, trabajo nativo y companions móviles de plataformas internas.",
-        "descriptionMobile": "Apps con scanner, trabajo nativo y companions móviles internos."
-      },
-      "frontend": {
-        "title": "Soporte de frontend",
-        "description": "Herramientas UI que uso para entregar dashboards, flujos administrativos o pantallas de cliente cuando el producto las necesita.",
-        "descriptionMobile": "Dashboards, flujos administrativos y pantallas de cliente cuando se necesitan."
-      }
+    "label": "/ 01 — Sobre mí",
+    "sticker": "hola · hi",
+    "h2": "Hago apps <hl>web</hl> y <hl2>móviles</hl2>.",
+    "p1": "Soy Daniel <b>(mokhigh)</b>. Llevo unos años desarrollando software, desde APIs hasta aplicaciones con información actualizada en tiempo real.",
+    "p2": "La navaja suiza del fokin software: frontend, backend, base de datos y deploy.",
+    "s1": "años de experiencia",
+    "s2": "proyectos entregados",
+    "s3": "idiomas · EN / ES"
+  },
+  "stack": {
+    "h1": "Main",
+    "h2": "Stack.",
+    "h3": "principal.",
+    "label": "/ 02 — herramientas principales",
+    "bz": "/ otras tecnologías que utilizo",
+    "hint": "arrástrame →",
+    "cat": {
+      "fe": "Frontend",
+      "be": "Backend",
+      "ui": "UI",
+      "i18n": "i18n",
+      "rt": "Tiempo real",
+      "db": "Base de datos",
+      "baas": "BaaS",
+      "mob": "Móvil",
+      "dev": "DevOps",
+      "host": "Hosting"
     }
   },
-  "projects": {
-    "eyebrow": "Proyectos"
-  },
   "contact": {
-    "eyebrow": "Contacto",
-    "title": "Desarrollo full-stack.",
-    "description": "Software para operaciones reales de negocio, herramientas internas, dashboards, flujos de inventario, aplicaciones móviles y sistemas full-stack.",
-    "note": "Ubicado en Culiacan, Sinaloa, Mexico.",
-    "fit": [
-      "Herramientas internas",
-      "Dashboards administrativos",
-      "Apps móviles",
-      "Sistemas de operación en tiempo real"
-    ],
-    "privateTitle": "Mejor encaje",
-    "privateBody": "Productos privados para empresas, flujos de reportes, operaciones de inventario, funciones en tiempo real y entrega end-to-end desde la logica backend hasta interfaces usables.",
-    "cards": {
-      "email": "Email",
-      "phone": "Telefono",
-      "linkedin": "LinkedIn",
-      "location": "Ubicacion"
-    },
-    "primaryCta": "Enviar email",
-    "secondaryCta": "Abrir LinkedIn"
+    "label": "/ 03 — Contacto",
+    "h1": "Escríbeme",
+    "phone": "Teléfono",
+    "loc": "Basado en",
+    "location": "Culiacán, MX"
+  },
+  "footer": {
+    "tag": "hecho con cigarritos y vape"
   }
 }

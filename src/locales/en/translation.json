@@ -1,96 +1,56 @@
 {
   "nav": {
-    "home": "Home",
     "about": "About",
-    "projects": "Projects",
-    "contact": "Contact",
-    "menu": "Menu"
+    "stack": "Stack",
+    "contact": "Contact"
   },
-  "home": {
-    "welcome": "Hi, I’m Daniel Elorreaga Mokay",
-    "description": "Full-stack developer",
-    "webLabel": "Web",
-    "mobileLabel": "Mobile",
-    "summary": "I build internal software, landing pages, mobile apps, and data-heavy operational tools for real business workflows.",
-    "highlightTags": [
-      "Internal tools",
-      "Realtime systems",
-      "Reports and audits",
-      "Mobile apps"
-    ],
-    "primaryCta": "View projects",
-    "secondaryCta": "See stack",
-    "calloutTitle": "Most of my work lives in private products.",
-    "calloutBody": "This portfolio focuses on what I built, the workflows I improved, and the kind of systems I can own end to end."
+  "hero": {
+    "status": "Available for work",
+    "loc": "Culiacán, Sinaloa · MX",
+    "role1": "Full-stack",
+    "role2": "developer",
+    "role3": "specializing in web & mobile apps.",
+    "drag": "drag the icons →",
+    "scroll": "scroll"
   },
   "about": {
-    "eyebrow": "Stack",
-    "title": "Stack built for real business systems.",
-    "intro": "APIs, data models, integrations, realtime flows, operational logic and web or mobile layer needed to ship the product.",
-    "introMobile": "APIs, integrations, realtime flows, and the web or mobile layer needed to ship the product.",
-    "principles": {
-      "backend": {
-        "title": "Backend first",
-        "body": "I am strongest in APIs, business logic, data modeling, integrations, and the deployment path around them.",
-        "bodyMobile": "Strongest in APIs, business logic, data modeling, and deployment."
-      },
-      "business": {
-        "title": "Built for operational complexity",
-        "body": "Most of my work supports payroll, finance, inventory, ticketing, reporting, and internal collaboration.",
-        "bodyMobile": "Most of my work supports payroll, finance, inventory, reporting, and internal workflows."
-      },
-      "tools": {
-        "title": "Practical stack, end-to-end ownership",
-        "body": "Node, SQL and NoSQL storage, realtime services, mobile and frontend layers to deliver a usable product.",
-        "bodyMobile": "Node, databases, realtime services, and UI layers to deliver a usable product."
-      }
-    },
-    "groups": {
-      "backend": {
-        "title": "Backend core",
-        "description": "The services, data stores, integrations, and realtime layers I rely on most.",
-        "descriptionMobile": "Services, data stores, integrations, and realtime layers."
-      },
-      "delivery": {
-        "title": "Delivery and operations",
-        "description": "Version control, containers, tooling, and hosting that keep projects stable and shippable.",
-        "descriptionMobile": "Tooling, hosting, and delivery workflows that keep projects stable."
-      },
-      "mobile": {
-        "title": "Mobile development",
-        "description": "Tools I use for scanner-based apps, native work, and mobile companions for internal platforms.",
-        "descriptionMobile": "Scanner-based apps, native work, and internal mobile companions."
-      },
-      "frontend": {
-        "title": "Frontend support",
-        "description": "UI Tools I use to deliver dashboards, admin flows, or client-facing screens when the product needs them.",
-        "descriptionMobile": "Dashboards, admin flows, and client-facing screens when needed."
-      }
+    "label": "/ 01 — About",
+    "sticker": "hola · hi",
+    "h2": "I build <hl>web</hl> and <hl2>mobile</hl2> apps.",
+    "p1": "I'm Daniel — my friends call me <b>mokhigh</b>. I've been shipping web and mobile products for the last four years, from fast MVPs on Vercel to real-time platforms running on Socket.io and MongoDB.",
+    "p2": "I care about clean code and tight UX. I work end-to-end: API, database, frontend, mobile, deployment — and everything I ship is ready for Spanish and English speakers.",
+    "s1": "years of experience",
+    "s2": "projects delivered",
+    "s3": "languages · EN / ES"
+  },
+  "stack": {
+    "h1": "Main",
+    "h2": "Stack.",
+    "h3": "I live in.",
+    "label": "/ 02 — tools I use the most",
+    "bz": "/ other technologies I use",
+    "hint": "drag me →",
+    "cat": {
+      "fe": "Frontend",
+      "be": "Backend",
+      "ui": "UI",
+      "i18n": "i18n",
+      "rt": "Realtime",
+      "db": "Database",
+      "baas": "BaaS",
+      "mob": "Mobile",
+      "dev": "DevOps",
+      "host": "Hosting"
     }
   },
-  "projects": {
-    "eyebrow": "Projects"
-  },
   "contact": {
-    "eyebrow": "Contact",
-    "title": "Full-stack development.",
-    "description": "Software for real business operations, internal tools, dashboards, inventory flows, mobile apps, and full-stack systems.",
-    "note": "Based in Culiacan, Sinaloa, Mexico.",
-    "fit": [
-      "Internal tools",
-      "Admin dashboards",
-      "Mobile apps",
-      "Realtime operational systems"
-    ],
-    "privateTitle": "Best fit",
-    "privateBody": "Private company products, reporting flows, inventory operations, realtime features, and end-to-end delivery from backend logic to usable interfaces.",
-    "cards": {
-      "email": "Email",
-      "phone": "Phone",
-      "linkedin": "LinkedIn",
-      "location": "Location"
-    },
-    "primaryCta": "Send email",
-    "secondaryCta": "Open LinkedIn"
+    "label": "/ 03 — Contact",
+    "h1": "Hit me up",
+    "phone": "Phone",
+    "loc": "Based in",
+    "location": "Culiacán, MX"
+  },
+  "footer": {
+    "tag": "powered by cigarrettes & vape"
   }
 }
