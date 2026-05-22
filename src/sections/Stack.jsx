@@ -115,15 +115,26 @@ export default function Stack() {
         el.style.transform = `translate(${x}px,${y}px)`;
 
         el.addEventListener('pointerdown', (e) => {
-          e.preventDefault();
-          obj.dragging = true;
+          obj._pending = true;
+          obj._startX = e.clientX;
+          obj._startY = e.clientY;
+          obj._pointerId = e.pointerId;
           obj.dragOffX = e.clientX - obj.x;
           obj.dragOffY = e.clientY - obj.y;
-          try { el.setPointerCapture(e.pointerId); } catch (_) { /* ignore */ }
-          ring?.classList.add('drag');
         });
         el.addEventListener('pointermove', (e) => {
+          if (obj._pending) {
+            const dx = Math.abs(e.clientX - obj._startX);
+            const dy = Math.abs(e.clientY - obj._startY);
+            if (dx + dy < 8) return;
+            if (dy > dx) { obj._pending = false; return; }
+            obj._pending = false;
+            obj.dragging = true;
+            try { el.setPointerCapture(obj._pointerId); } catch (_) { /* ignore */ }
+            ring?.classList.add('drag');
+          }
           if (!obj.dragging) return;
+          e.preventDefault();
           const nx = e.clientX - obj.dragOffX;
           const ny = e.clientY - obj.dragOffY;
           obj.vx = (nx - obj.x) * 0.4;
@@ -131,6 +142,7 @@ export default function Stack() {
           obj.x = nx; obj.y = ny;
         });
         const end = (e) => {
+          obj._pending = false;
           if (!obj.dragging) return;
           obj.dragging = false;
           ring?.classList.remove('drag');
@@ -142,7 +154,13 @@ export default function Stack() {
     };
 
     const rafLayout = requestAnimationFrame(layout);
-    const onResize = () => requestAnimationFrame(layout);
+    let lastWidth = window.innerWidth;
+    const onResize = () => {
+      if (window.innerWidth !== lastWidth) {
+        lastWidth = window.innerWidth;
+        requestAnimationFrame(layout);
+      }
+    };
     window.addEventListener('resize', onResize);
 
     let raf;

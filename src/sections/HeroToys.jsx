@@ -94,17 +94,28 @@ export default function HeroToys() {
         });
 
         el.addEventListener('pointerdown', (e) => {
-          e.preventDefault();
-          obj.dragging = true;
-          el.classList.add('dragging');
+          obj._pending = true;
+          obj._startX = e.clientX;
+          obj._startY = e.clientY;
+          obj._pointerId = e.pointerId;
           obj.dragOffX = e.clientX - obj.x;
           obj.dragOffY = e.clientY - obj.y;
-          obj.vx = 0; obj.vy = 0;
-          try { el.setPointerCapture(e.pointerId); } catch (_) { /* ignore */ }
-          ring?.classList.add('drag');
         });
         el.addEventListener('pointermove', (e) => {
+          if (obj._pending) {
+            const dx = Math.abs(e.clientX - obj._startX);
+            const dy = Math.abs(e.clientY - obj._startY);
+            if (dx + dy < 8) return;
+            if (dy > dx) { obj._pending = false; return; }
+            obj._pending = false;
+            obj.dragging = true;
+            el.classList.add('dragging');
+            obj.vx = 0; obj.vy = 0;
+            try { el.setPointerCapture(obj._pointerId); } catch (_) { /* ignore */ }
+            ring?.classList.add('drag');
+          }
           if (!obj.dragging) return;
+          e.preventDefault();
           const nx = e.clientX - obj.dragOffX;
           const ny = e.clientY - obj.dragOffY;
           obj.vx = (nx - obj.x) * 0.3;
@@ -112,6 +123,7 @@ export default function HeroToys() {
           obj.x = nx; obj.y = ny;
         });
         const endDrag = (e) => {
+          obj._pending = false;
           if (!obj.dragging) return;
           obj.dragging = false;
           el.classList.remove('dragging');
@@ -124,7 +136,14 @@ export default function HeroToys() {
     };
 
     spawn();
-    window.addEventListener('resize', spawn);
+    let lastWidth = window.innerWidth;
+    const onResize = () => {
+      if (window.innerWidth !== lastWidth) {
+        lastWidth = window.innerWidth;
+        spawn();
+      }
+    };
+    window.addEventListener('resize', onResize);
 
     let raf;
     const tick = () => {
@@ -152,7 +171,7 @@ export default function HeroToys() {
 
     return () => {
       cancelAnimationFrame(raf);
-      window.removeEventListener('resize', spawn);
+      window.removeEventListener('resize', onResize);
       root.innerHTML = '';
     };
   }, []);
