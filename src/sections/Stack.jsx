@@ -66,11 +66,16 @@ export default function Stack() {
     const bubbleObjs = [];
     const ring = document.getElementById('cursorRing');
 
+    let cachedW = 0;
+    let cachedH = 0;
+
     const layout = () => {
       host.innerHTML = '';
       bubbleObjs.length = 0;
       const zone = host.getBoundingClientRect();
-      const W = zone.width; const H = zone.height;
+      cachedW = zone.width;
+      cachedH = zone.height;
+      const W = cachedW; const H = cachedH;
       if (W <= 0 || H <= 0) return;
 
       BUBBLES.forEach((b) => {
@@ -142,8 +147,7 @@ export default function Stack() {
 
     let raf;
     const tick = () => {
-      const zone = host.getBoundingClientRect();
-      const W = zone.width; const H = zone.height;
+      const W = cachedW; const H = cachedH;
       if (W > 0) {
         bubbleObjs.forEach((o) => {
           if (!o.dragging) {

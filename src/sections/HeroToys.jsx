@@ -30,19 +30,21 @@ export default function HeroToys() {
     const root = rootRef.current;
     if (!root) return undefined;
 
-    const vw = () => window.innerWidth;
-    const vh = () => window.innerHeight;
+    let cachedW = window.innerWidth;
+    let cachedH = window.innerHeight;
     const toyObjs = [];
     const ring = document.getElementById('cursorRing');
 
     const spawn = () => {
-      const isMobile = vw() <= 900;
+      cachedW = window.innerWidth;
+      cachedH = window.innerHeight;
+      const isMobile = cachedW <= 900;
 
       root.innerHTML = '';
       root.classList.toggle('toys-mobile', isMobile);
       toyObjs.length = 0;
-      const centerYmin = vh() * 0.32;
-      const centerYmax = vh() * 0.7;
+      const centerYmin = cachedH * 0.32;
+      const centerYmax = cachedH * 0.7;
       const horizontalPadding = isMobile ? 10 : 20;
       const topPadding = isMobile ? 84 : 100;
       const toyBuffer = isMobile ? 120 : 220;
@@ -62,10 +64,10 @@ export default function HeroToys() {
 
         let x; let y; let tries = 0;
         do {
-          x = Math.random() * (vw() - toyBuffer) + horizontalPadding;
-          y = Math.random() * (vh() - toyBuffer) + topPadding;
+          x = Math.random() * (cachedW - toyBuffer) + horizontalPadding;
+          y = Math.random() * (cachedH - toyBuffer) + topPadding;
           tries += 1;
-        } while (tries < 15 && (y > centerYmin && y < centerYmax && x > vw() * 0.1 && x < vw() * 0.9));
+        } while (tries < 15 && (y > centerYmin && y < centerYmax && x > cachedW * 0.1 && x < cachedW * 0.9));
 
         const obj = {
           el, x, y,
@@ -126,7 +128,7 @@ export default function HeroToys() {
 
     let raf;
     const tick = () => {
-      const w = vw(); const h = vh();
+      const w = cachedW; const h = cachedH;
       toyObjs.forEach((o) => {
         if (!o.dragging) {
           o.x += o.vx;
