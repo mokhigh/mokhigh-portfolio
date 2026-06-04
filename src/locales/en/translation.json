@@ -2,6 +2,7 @@
   "nav": {
     "about": "About",
     "stack": "Stack",
+    "ai": "AI",
     "contact": "Contact"
   },
   "hero": {
@@ -43,14 +44,20 @@
       "host": "Hosting"
     }
   },
+  "ai": {
+    "label": "/ 03 — AI in my workflow",
+    "subtitle": "Interchangeable CLI coding agents I drive from the terminal",
+    "h1": "AI I",
+    "h2": "build with.",
+    "claude": "Claude Code",
+    "copilot": "Copilot CLI",
+    "codex": "Codex CLI"
+  },
   "contact": {
-    "label": "/ 03 — Contact",
+    "label": "/ 04 — Contact",
     "h1": "Hit me up",
     "phone": "Phone",
     "loc": "Based in",
     "location": "Culiacán, MX"
-  },
-  "footer": {
-    "tag": "powered by cigarrettes & vape"
   }
 }

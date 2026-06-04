@@ -7,6 +7,7 @@ import Hero from './sections/Hero';
 import Marquee from './sections/Marquee';
 import About from './sections/About';
 import Stack from './sections/Stack';
+import AI from './sections/AI';
 import Contact from './sections/Contact';
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
       <Marquee />
       <About />
       <Stack />
+      <AI />
       <Contact />
       <Analytics />
       <SpeedInsights />

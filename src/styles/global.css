@@ -11,7 +11,9 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:var(--bg);color:var(--ink);font-family:'Space Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-html{cursor:none}
+html{cursor:none;scroll-behavior:smooth}
+#about,#stack,#ai,#contact{scroll-margin-top:88px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{overflow-x:hidden;min-height:100vh;cursor:none}
 a,button{cursor:none}
 ::selection{background:var(--blue);color:#fff}
@@ -236,6 +238,33 @@ section{position:relative;min-height:100vh;width:100%}
 .card.c-vio{color:var(--wine)}.card.c-vio .dot{background:var(--wine)}
 .card.c-white{color:#fff}.card.c-white .dot{background:#fff}
 
+/* ---------- AI in my workflow ---------- */
+#ai-section{background:#000;position:relative;min-height:unset;padding:10px 0}
+.ai-strip{
+  margin:0 40px;padding:18px 0;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  display:flex;align-items:center;gap:28px;flex-wrap:wrap;
+}
+.ai-strip-head{display:flex;flex-direction:column;gap:6px;flex-shrink:0;max-width:240px}
+.ai-strip-label{
+  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;
+  color:var(--ink-2);text-transform:uppercase;
+}
+.ai-strip-subtitle{
+  font-family:'Roboto',sans-serif;font-size:13px;line-height:1.35;color:var(--ink-2);
+}
+.ai-row{display:flex;gap:14px;flex-wrap:wrap;flex:1}
+.ai-chip{
+  display:flex;align-items:center;gap:12px;
+  border:1px solid var(--line);border-radius:10px;padding:10px 16px;
+  transition:border-color .25s ease;
+}
+.ai-chip:hover{border-color:currentColor}
+.ai-icon{width:28px;height:28px;object-fit:contain;flex-shrink:0;display:block}
+.ai-chip .ai-name{font-family:'Roboto',sans-serif;font-size:15px;letter-spacing:-.01em;color:#fff}
+.ai-chip.c-cyan{color:var(--blue)}
+.ai-chip.c-mag{color:var(--wine-mid)}
+
 /* Bubble playground */
 .bubbles-zone{
   flex:0 0 auto;margin:10px 40px 10px;height:170px;
@@ -352,6 +381,9 @@ section{position:relative;min-height:100vh;width:100%}
   #contact{justify-content:flex-start;padding-bottom:40px}
   .contact-grid{grid-template-columns:1fr 1fr}
   .footer-meta{position:static;margin-top:auto;padding:40px 20px 0;flex-direction:column;gap:10px}
+  .ai-strip{margin:0 20px;gap:14px}
+  .ai-row{gap:10px}
+  .ai-chip{flex:1 1 100%}
   .stack-header{flex-direction:column;gap:10px;padding:60px 20px 20px}
   .stack-track-wrap{padding:16px 20px}
   .bubbles-zone{height:320px;margin:10px 16px 10px}

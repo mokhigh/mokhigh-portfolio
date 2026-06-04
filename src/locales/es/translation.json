@@ -2,6 +2,7 @@
   "nav": {
     "about": "Sobre mí",
     "stack": "Stack",
+    "ai": "IA",
     "contact": "Contacto"
   },
   "hero": {
@@ -43,14 +44,20 @@
       "host": "Hosting"
     }
   },
+  "ai": {
+    "label": "/ 03 — IA en mi flujo de trabajo",
+    "subtitle": "Agentes de código por CLI, intercambiables, que manejo desde la terminal",
+    "h1": "IA con la que",
+    "h2": "desarrollo.",
+    "claude": "Claude Code",
+    "copilot": "Copilot CLI",
+    "codex": "Codex CLI"
+  },
   "contact": {
-    "label": "/ 03 — Contacto",
+    "label": "/ 04 — Contacto",
     "h1": "Escríbeme",
     "phone": "Teléfono",
     "loc": "Basado en",
     "location": "Culiacán, MX"
-  },
-  "footer": {
-    "tag": "hecho con cigarritos y vape"
   }
 }

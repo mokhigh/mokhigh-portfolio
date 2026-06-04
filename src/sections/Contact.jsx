@@ -95,7 +95,6 @@ export default function Contact() {
 
       <div className="footer-meta">
         <span>© 2026 · Daniel Elorreaga Mokay</span>
-        <span>{t('footer.tag')}</span>
         <span>v.2.0 · mokhigh.dev</span>
       </div>
     </section>

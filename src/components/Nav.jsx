@@ -44,6 +44,7 @@ export default function Nav() {
       <div className="nav-right">
         <a href="#about" className="nav-link">{t('nav.about')}</a>
         <a href="#stack" className="nav-link">{t('nav.stack')}</a>
+        <a href="#ai" className="nav-link">{t('nav.ai')}</a>
         <a href="#contact" className="nav-link">{t('nav.contact')}</a>
         <div className="lang">
           <button
