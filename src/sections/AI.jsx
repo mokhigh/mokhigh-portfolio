@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import ClaudeIcon from '../assets/icons/ClaudeIcon.svg';
 import CopilotIcon from '../assets/icons/CopilotIcon.svg';
 import OpenAiIcon from '../assets/icons/OpenAiIcon.svg';
+import DeepseekIcon from '../assets/icons/DeepseekIcon.svg';
 
 const ease = [0.2, 0.8, 0.2, 1];
 const vp = { once: true, amount: 0.3 };
@@ -12,6 +13,7 @@ const TOOLS = [
   { key: 'claude', name: 'ai.claude', color: 'c-mag', icon: ClaudeIcon },
   { key: 'copilot', name: 'ai.copilot', color: 'c-cyan', icon: CopilotIcon },
   { key: 'codex', name: 'ai.codex', color: 'c-green', icon: OpenAiIcon },
+  { key: 'deepseek', name: 'ai.deepseek', color: 'c-yellow', icon: DeepseekIcon },
 ];
 
 export default function AI() {

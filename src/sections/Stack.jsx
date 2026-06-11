@@ -26,6 +26,7 @@ import SupabaseIcon from '../assets/icons/SupabaseIcon.svg';
 import PythonIcon from '../assets/icons/PythonIcon.svg';
 
 const CARDS = [
+  { cat: '', name: 'Next.js', color: 'c-cyan', icon: NextjsIcon },
   { cat: 'fe', name: 'React', color: 'c-cyan', icon: ReactIcon },
   { cat: 'be', name: 'Node.js', color: 'c-mag', icon: NodejsIcon },
   { cat: 'be', name: 'Express', color: 'c-cyan', icon: ExpressIcon },
@@ -49,7 +50,7 @@ const BUBBLES = [
   { t: 'Vite', c: 'b-outline', icon: ViteIcon },
   { t: 'i18next', c: 'b-outline-m', icon: I18nextIcon },
   { t: 'Supabase', c: 'b-outline', icon: SupabaseIcon },
-  { t: 'Next.js', c: 'b-outline', icon: NextjsIcon },
+  { t: 'React', c: 'b-outline', icon: ReactIcon },
   { t: 'Python', c: 'b-outline-m', icon: PythonIcon },
 ];
 
@@ -250,7 +251,7 @@ export default function Stack() {
             >
               <div className="num">{String(i + 1).padStart(2, '0')}</div>
               <img src={c.icon} alt="" aria-hidden="true" className="card-icon" />
-              <div className="cat">{t(`stack.cat.${c.cat}`)}</div>
+              <div className="cat">{c.cat ? t(`stack.cat.${c.cat}`) : ''}</div>
               <div className="name">{c.name}</div>
               <div className="dot" />
             </motion.div>
